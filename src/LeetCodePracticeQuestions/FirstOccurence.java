@@ -9,6 +9,9 @@ public class FirstOccurence {
         System.out.println(strStr(hayStack, needle));
     }
     public static int strStr(String haystack, String needle) {
+
+        /*Method 1
+
         if(needle.isEmpty() || haystack.isEmpty())
             return 0;
         int i = 0;
@@ -21,13 +24,25 @@ public class FirstOccurence {
                     index = i;
                 j++;
             } else {
-                index = -1;
+                if(index != -1) {
+                    i = index;
+                    index = -1;
+                }
                 j = 0;
             }
             i++;
         }
         if(j == needle.length())
             return index;
+        return -1;*/
+
+        //Method 2
+        if(needle.isEmpty() || haystack.isEmpty())
+            return 0;
+        for(int i = 0; i <= haystack.length() - needle.length(); i++) {
+            if(haystack.startsWith(needle, i))
+                return i;
+        }
         return -1;
     }
 }
