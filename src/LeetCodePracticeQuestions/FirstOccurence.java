@@ -44,5 +44,6 @@ public class FirstOccurence {
                 return i;
         }
         return -1;
+
     }
 }
