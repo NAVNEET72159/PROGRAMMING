@@ -4,8 +4,8 @@ public class DailyTemperature {
     public static void main(String[] args) {
         int[] T = {73,74,75,71,69,72,76,73};
         int[] ans = dailyTemperatures(T);
-        for(int i=0;i<ans.length;i++) {
-            System.out.print(ans[i] + " ");
+        for (int an : ans) {
+            System.out.print(an + " ");
         }
     }
 
