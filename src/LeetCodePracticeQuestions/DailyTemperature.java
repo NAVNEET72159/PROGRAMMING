@@ -8,7 +8,6 @@ public class DailyTemperature {
             System.out.print(an + " ");
         }
     }
-
     public static int[] dailyTemperatures(int[] temperatures) {
         int[] ans = new int[temperatures.length];
         int[] stack = new int[temperatures.length];
