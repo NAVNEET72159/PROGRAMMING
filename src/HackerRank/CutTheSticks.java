@@ -1,5 +1,7 @@
 package HackerRank;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CutTheSticks {
@@ -8,16 +10,16 @@ public class CutTheSticks {
         System.out.println(cutTheSticks(arr));
     }
     public static List<Integer> cutTheSticks(List<Integer> arr) {
-        arr.sort(Integer::compareTo);
-        int n = arr.size();
-        int i = 0;
-        while (i < n) {
-            System.out.println(n - i);
-            int min = arr.get(i);
-            while (i < n && arr.get(i) == min) {
-                i++;
+        Collections.sort(arr);
+        List<Integer> result = new ArrayList<>();
+        while(!arr.isEmpty()) {
+            result.add(arr.size());
+            int min = arr.get(0);
+            for (int i = 0; i < arr.size(); i++) {
+                arr.set(i, arr.get(i) - min);
             }
+            arr.removeIf(i -> i == 0);
         }
-        return arr;
+        return result;
     }
 }
