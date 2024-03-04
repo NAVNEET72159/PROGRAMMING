@@ -18,14 +18,14 @@ public class EvenOddTree {
     }
     public static boolean isEvenOddTree(Tree_Node root) {
         if(root == null) return false;
-        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
+        ArrayDeque<Tree_Node> queue = new ArrayDeque<>();
         queue.add(root);
         int level = -1;
         while(!queue.isEmpty()){
             level++;
             int size = queue.size(), prev = 0;
             for(int i = 0; i < size; i++){
-                TreeNode curr = queue.poll();
+                Tree_Node curr = queue.poll();
 
                 if(level == 0 && curr.val % 2 == 0){
                     return false;
