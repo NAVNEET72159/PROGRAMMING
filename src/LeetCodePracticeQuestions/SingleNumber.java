@@ -9,7 +9,6 @@ public class SingleNumber {
         int result = 0;
         for (int num : nums) {
             result ^= num;
-            System.out.println(result);
         }
         return result;
     }
